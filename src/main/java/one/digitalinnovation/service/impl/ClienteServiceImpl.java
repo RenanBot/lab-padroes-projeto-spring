@@ -1,24 +1,17 @@
-package one.digitalinnovation.gof.service.impl;
+package one.digitalinnovation.service.impl;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import one.digitalinnovation.gof.model.Cliente;
-import one.digitalinnovation.gof.model.ClienteRepository;
-import one.digitalinnovation.gof.model.Endereco;
-import one.digitalinnovation.gof.model.EnderecoRepository;
-import one.digitalinnovation.gof.service.ClienteService;
-import one.digitalinnovation.gof.service.ViaCepService;
-
-/**
- * Implementação da <b>Strategy</b> {@link ClienteService}, a qual pode ser
- * injetada pelo Spring (via {@link Autowired}). Com isso, como essa classe é um
- * {@link Service}, ela será tratada como um <b>Singleton</b>.
- * 
- * @author falvojr
- */
+import one.digitalinnovation.model.Cliente;
+import one.digitalinnovation.model.ClienteRepository;
+import one.digitalinnovation.model.Endereco;
+import one.digitalinnovation.model.EnderecoRepository;
+import one.digitalinnovation.service.ClienteService;
+import one.digitalinnovation.service.ViaCepService;
+  
 @Service
 public class ClienteServiceImpl implements ClienteService {
 
@@ -65,6 +58,13 @@ public class ClienteServiceImpl implements ClienteService {
 		// Deletar Cliente por ID.
 		clienteRepository.deleteById(id);
 	}
+
+	@Override
+	public void deletarPorNome(Cliente cliente) {
+		// Deletar Cliente por nome.
+		clienteRepository.delete(cliente);
+	}
+
 
 	private void salvarClienteComCep(Cliente cliente) {
 		// Verificar se o Endereco do Cliente já existe (pelo CEP).

@@ -1,17 +1,8 @@
-package one.digitalinnovation.gof.model;
+package one.digitalinnovation.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-/**
- * Os atributos desse modelo foram gerados automaticamente pelo site
- * jsonschema2pojo.org. Para isso, usamos o JSON de retorno da API do ViaCEP.
- * 
- * @see <a href="https://www.jsonschema2pojo.org">jsonschema2pojo.org</a>
- * @see <a href="https://viacep.com.br">ViaCEP</a>
- * 
- * @author falvojr
- */
 @Entity
 public class Endereco {
 
